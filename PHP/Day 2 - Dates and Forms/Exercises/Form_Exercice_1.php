@@ -35,11 +35,19 @@
 </head>
 
 <body>
-	irst and last name
-	<form action="" method="post">
-		<input type="text" name="firstname" placeholder="First Name">
-		<input type="text" name="lastname" placeholder="Last Name">
-		<input type="submit" name="submit">
+	<?php
+	$firstName = '';
+	$lastName = '';
+	if (isset($_POST['submit'])) {
+		$firstName = $_POST['firstname'];
+		$lastName = $_POST['lastname'];
+	}
+	?>
+	First and last name
+	<form action="" method="POST">
+		<input type="text" name="firstname" placeholder="First Name" value='<?php echo $firstName; ?>'>
+		<input type="text" name="lastname" placeholder="Last Name" value='<?php echo $lastName; ?>'>
+		<input type="submit" name="submit" value="SEND">
 	</form>
 </body>
 
